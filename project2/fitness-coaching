@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health & Wellness Coaching</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(58, 78, 78);
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(255, 112, 67, 0.9);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content-section h2 {
+            color: #ff7043;
+            margin-bottom: 10px;
+        }
+
+        .content-section p {
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-item {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .grid-item h3 {
+            color: #ff7043;
+            margin-bottom: 10px;
+        }
+
+        .grid-item p {
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            background-color: rgba(255, 112, 67, 0.9);
+            color: white;
+            padding: 15px 0;
+            font-size: 1em;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        footer a:hover {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Health & Wellness Coaching</h1>
+        <nav>
+            <ul>
+                <li><a href="#fitness">Fitness Coaching Tips</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Fitness Coaching Tips -->
+        <section id="fitness" class="content-section">
+            <h2>Fitness Coaching Tips</h2>
+            <p>Explore these fitness coaching strategies for a well-rounded approach to health:</p>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h3>1. Strength Training</h3>
+                    <p>Focus on compound exercises like squats, deadlifts, and bench presses to build strength and muscle.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>2. Interval Training</h3>
+                    <p>Incorporate high-intensity interval training (HIIT) to maximize calorie burn in less time.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>3. Nutrition Balance</h3>
+                    <p>Eat a diet rich in proteins, healthy fats, and complex carbohydrates for sustained energy.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>4. Flexibility Training</h3>
+                    <p>Include yoga or Pilates to improve flexibility, posture, and core strength.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>5. Hydration</h3>
+                    <p>Drink at least 8 glasses of water daily to stay hydrated and enhance performance.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>6. Goal Setting</h3>
+                    <p>Set realistic fitness goals and break them into smaller milestones to stay motivated.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>7. Rest & Recovery</h3>
+                    <p>Prioritize rest days to allow your muscles to recover and prevent overtraining.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>8. Progress Tracking</h3>
+                    <p>Keep a workout journal to track your progress and identify areas for improvement.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>9. Personalized Plans</h3>
+                    <p>Work with a certified coach to tailor a fitness plan that aligns with your goals and lifestyle.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>10. Mental Resilience</h3>
+                    <p>Develop a positive mindset and stay consistent to overcome challenges in your fitness journey.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Health & Wellness Coaching. All rights reserved.</p>
+        <p>Visit <a href="#">our resources page</a> for more information.</p>
+    </footer>
+
+</body>
+</html>

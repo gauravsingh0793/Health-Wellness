@@ -1,0 +1,477 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Livvic", sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+/* body {
+    background-color: #f8f9fa;
+} */
+
+
+/* Sticky Navbar */
+.navbar {
+    position: fixed; /* Makes it stick to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    opacity: 0.9;
+    font-size: 1rem;
+    /* Navbar color */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Ensures it stays above other elements */
+    transition: 0.3s ease-in-out; /* Smooth effect */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Optimal size for visibility */
+    width: 50px; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensures it scales well */
+    object-fit: contain; /* Prevents distortion */
+    border-radius: 50%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-name {
+    font-size: 22px; /* Adjust for better visibility */
+    font-weight: bold;
+    color:gold; /* Adjust color to match your theme */
+    margin-left: 10px; /* Space between logo and text */
+    font-family: Arial, sans-serif;
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    position: relative;
+    margin: 0 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    display: block;
+}
+
+.nav-links a:hover {
+    background: #555;
+    border-radius: 5px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: #444;
+    min-width: 150px;
+    list-style: none;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-menu li {
+    padding: 8px 12px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* section style */
+/* Section with Background Image */
+/* Hero Section - Full Screen Background */
+.hero {
+    position: relative;
+    background: url('banner-03.jpg');
+    height: 100vh; /* Full viewport height */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* text-align: center; */
+    color: white;
+    /* padding: 20px; */
+    overflow: hidden;
+}
+
+.hero-content{
+    margin-left:  850px;
+    margin-top: 250px;
+}
+
+.hero-content h3{
+    color: greenyellow;
+    font-size: 60px;
+}
+
+/* Dark Overlay for Better Readability */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+/* Text Content */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3); /* Slight transparent background */
+    border-radius: 10px;
+}
+
+/* Heading */
+.hero-content h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Paragraph */
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #ff6600;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #e65c00;
+    transform: scale(1.05);
+}
+
+/* card section */
+/* Card Section */
+.cards-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f8f9fa;
+}
+
+.section-title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Cards Container */
+.cards {
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Individual Card */
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 280px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+
+.decision{
+    padding-left: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-image: url('bg-06.png');
+    height: 400px;
+    width: 100%;
+   filter: brightness(0.4);
+   background-size: cover;
+   color: green;
+}
+
+.decision h3{
+    font-size: 40px;
+    
+}
+
+.decision span{
+    color: orange;
+    font-family: cursive;
+}
+
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #30E430;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #28C028;
+    transform: scale(1.05);
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 350px;
+    }
+}
+
+/* footer css */
+/* Footer Styles */
+.footer {
+    background: grey; /* Green wellness theme */
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Footer Sections */
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+}
+
+/* Section Headings */
+.footer-section h2,
+.footer-section h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+/* About Section */
+.footer-section.about p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Quick Links & Services */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Section */
+.footer-section.contact p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Social Media Icons */
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    font-size: 20px;
+    margin: 0 10px;
+    color: white;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ffcc00; /* Highlight on hover */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid white;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        height: 80vh; /* Reduce height for smaller screens */
+        padding: 10px;
+    }
+
+    .hero-content {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #333;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .dropdown-menu {
+        position: relative;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        height: 50px; /* Reduce size on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-name {
+        font-size: 18px; /* Reduce size for small screens */
+    }
+}
+

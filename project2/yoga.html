@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenSpace - Yoga & Meditation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            padding: 15px 40px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 20px;
+            background-color: #ffffff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .benefit-icon {
+            font-size: 2.5em;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        /* Meditation Timer Section */
+        .meditation-section {
+            padding: 80px 20px;
+            background-color: #f5f7fa;
+            text-align: center;
+        }
+
+        .timer-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .timer-display {
+            font-size: 4em;
+            color: #2c3e50;
+            margin: 30px 0;
+            font-family: monospace;
+        }
+
+        .timer-controls button {
+            padding: 12px 25px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5em;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .animated {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Yoga & Meditation</h1>
+            <p>Discover the power of yoga and meditation for mental clarity</p>
+            <button class="cta-button" onclick="scrollToBenefits()">Learn More</button>
+        </div>
+    </section>
+
+    <section class="benefits" id="benefits">
+        <h2 class="section-title">Benefits of Practice</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card animated">
+                <i class="fas fa-brain benefit-icon"></i>
+                <h3>Mental Clarity</h3>
+                <p>Improve focus and enhance cognitive function through regular practice</p>
+            </div>
+            <div class="benefit-card animated">
+                <i class="fas fa-heartbeat benefit-icon"></i>
+                <h3>Stress Relief</h3>
+                <p>Reduce anxiety and lower stress levels with mindful techniques</p>
+            </div>
+            <div class="benefit-card animated">
+                <i class="fas fa-leaf benefit-icon"></i>
+                <h3>Inner Peace</h3>
+                <p>Find balance and harmony in your daily life</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="meditation-section" id="timer">
+        <div class="timer-container">
+            <h2>Meditation Timer</h2>
+            <div class="timer-display" id="timerDisplay">10:00</div>
+            <div class="timer-controls">
+                <button onclick="startTimer()">Start</button>
+                <button onclick="stopTimer()">Pause</button>
+                <button onclick="resetTimer()">Reset</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Timer Functionality
+        let timeLeft = 600;
+        let timerId = null;
+
+        function updateDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timerDisplay').textContent = 
+                `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+
+        function startTimer() {
+            if (!timerId) {
+                timerId = setInterval(() => {
+                    timeLeft--;
+                    updateDisplay();
+                    if (timeLeft <= 0) {
+                        clearInterval(timerId);
+                        alert('Session complete! Take a moment to breathe.');
+                    }
+                }, 1000);
+            }
+        }
+
+        function stopTimer() {
+            clearInterval(timerId);
+            timerId = null;
+        }
+
+        function resetTimer() {
+            stopTimer();
+            timeLeft = 600;
+            updateDisplay();
+        }
+
+        // Scroll Animations
+        function checkScroll() {
+            const elements = document.querySelectorAll('.animated');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < window.innerHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        function scrollToBenefits() {
+            document.getElementById('benefits').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Event Listeners
+        window.addEventListener('scroll', checkScroll);
+        document.addEventListener('DOMContentLoaded', checkScroll);
+    </script>
+</body>
+</html>

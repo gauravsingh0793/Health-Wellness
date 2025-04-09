@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>contact section</title>
+    <style>
+        /* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+header {
+    background-color: #2a9d8f;
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #e76f51;
+}
+
+.contact-section {
+    background-color: #fff;
+    padding: 50px 0;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #2a9d8f;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 28px;
+    color: #e76f51;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.info-item {
+    width: 45%;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 15px;
+}
+
+ul li a {
+    color: #2a9d8f;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: #e76f51;
+}
+
+.contact-form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #2a9d8f;
+    outline: none;
+}
+
+button.cta-button {
+    background-color: #e76f51;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+button.cta-button:hover {
+    background-color: #2a9d8f;
+    transform: scale(1.1);
+}
+
+.social-media ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media ul li a {
+    color: #2a9d8f;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social-media ul li a:hover {
+    color: #e76f51;
+}
+
+.map {
+    margin-top: 40px;
+    text-align: center;
+}
+
+footer {
+    background-color: #2a9d8f;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Keyframe Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | [Project Name]</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service/prengency.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-section">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We’d love to hear from you! If you have any questions or need support, feel free to get in touch with us using the contact form below, or reach us directly through our contact details.</p>
+
+            <div class="contact-info">
+                <div class="info-item">
+                    <h2>Email</h2>
+                    <p><a href="mailto:info@yourdomain.com">FitnessSpare7@gmail.com</a></p>
+                </div>
+                <div class="info-item">
+                    <h2>Phone</h2>
+                    <p>+91 7903424456</p>
+                </div>
+                <div class="info-item">
+                    <h2>Address</h2>
+                    <p>123 FitnessSpare, Health City, HC 12345</p>
+                </div>
+                <div class="info-item">
+                    <h2>Business Hours</h2>
+                    <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+
+            <h2>Get in Touch</h2>
+            <form action="#" method="POST" class="contact-form">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+
+            <div class="social-media">
+                <h2>Follow Us</h2>
+                <ul>
+                    <li><a href="https://www.facebook.com/people/Gaurav-Singh/pfbid0Rh4XYj1krpFzZ5JQ42ZkUbHBhRHekk8vgoUpUm2Kw4p19SsKfsDjotcTyk8ytu9Ql/?ref=ig_profile_ac">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/gauravsingh_bumrah7/">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+
+            <div class="map">
+                <h2>Our Location</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>FitnessSpare: Your Ultimate Guide to Health & Wellness.</p>
+    </footer>
+
+</body>
+</html>

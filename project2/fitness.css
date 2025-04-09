@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Livvic", sans-serif;
+    font-weight: 400;
+    /* line-height: 1.2; */
+    /* word-spacing: 10px; */
+}
+
+.fitness-container{
+    /* width: 60%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.fitness-container img{
+    margin: 0 auto;
+    width: 50%;
+    height: 500px;
+    border-radius: 30px;
+}
+
+h3{
+    font-size: 40px;
+}
+
+p{
+    font-size: 18px;
+    /* text-align: center; */
+    padding: 0 300px;
+}
+
+.fitness-img{
+    display: flex;
+    align-items: center;
+    margin-left: 150px;
+    /* padding: 0 300px; */
+}
+
+.fitness-img img{
+    height: 100%;
+    width: 80%;
+}
+ h2{
+    margin-left: 100px;
+    margin-top: 30px;
+    font-weight: 800;
+}
+ul{
+    margin-left: 100px;
+    margin-top: 20px;
+    font-size: 20px;
+}

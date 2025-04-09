@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Full Body Workout Videos</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #cce7ff, #f0faff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 25px 40px;
+      font-size: 32px;
+      font-weight: bold;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      animation: slideDown 1s ease-in-out;
+    }
+
+    .video-section {
+      margin-top: 40px;
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 20px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      animation: popIn 0.8s ease forwards;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-8px) scale(1.03);
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+      border-radius: 15px 15px 0 0;
+      border: none;
+    }
+
+    .video-title {
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      color: #004080;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin: 40px auto 0;
+      padding: 12px 24px;
+      background-color: #004080;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 10px;
+      transition: background 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #0077cc;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes popIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>Active Recovery (yoga and Streching)</header>
+
+  <section class="video-section">
+    <div class="grid-container">
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/v7AYKMP6rOE" allowfullscreen></iframe>
+            <div class="video-title">10-Minute Morning Yoga</div>
+          </div>
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/sTANio_2E0Q" allowfullscreen></iframe>
+            <div class="video-title">Full Body Stretch for Flexibility</div>
+          </div>
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/4pKly2JojMw" allowfullscreen></iframe>
+            <div class="video-title">5-Min Meditation & Recovery Yoga</div>
+          </div>
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/PYkKx1as35c" allowfullscreen></iframe>
+            <div class="video-title">Yoga for Athletes Recovery</div>
+          </div>
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/F1C3eY3I2tM" allowfullscreen></iframe>
+            <div class="video-title">15-Min Gentle Stretch & Relax</div>
+          </div>
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/wkAd1hZz3DU" allowfullscreen></iframe>
+            <div class="video-title">Stretch for Lower Back Relief</div>
+          </div>
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/QwJ-I1N6l9I" allowfullscreen></iframe>
+            <div class="video-title">Stretch After Workout | 10 Min</div>
+          </div>
+        </div>
+
+    <a class="back-button" href="workout-routine.html">← Back to Main Routine</a>
+  </section>
+
+</body>
+</html>

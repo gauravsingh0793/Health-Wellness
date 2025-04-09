@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Workout Routine</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: skyblue;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .header {
+            background: #004080;
+            color: white;
+            padding: 20px;
+            font-size: 32px;
+            font-weight: bold;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .workout {
+            padding: 20px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .day {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .day:hover {
+            transform: scale(1.08);
+            box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.3);
+        }
+        .day h3 {
+            color: #004080;
+            font-size: 24px;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+        .day:hover h3 {
+            color: #ff4500;
+        }
+        .day ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .day img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .day:hover img {
+            transform: scale(1.05);
+        }
+        .footer {
+            background: #004080;
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <script>
+        function toggleDetails(id) {
+            var details = document.getElementById(id);
+            if (details.style.display === "none") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <h1>Daily Workout Routine</h1>
+    </header>
+
+    <section class="workout">
+        <h2>Daily Workout Plan for a Healthy Life</h2>
+        
+        <div class="day" onclick="window.location.href='mon.html'">  <!--onclick function-->
+
+            <h3>Monday - Full Body Strength</h3>
+            <img src="monday.jpg.avif" alt="Full Body Strength Workout">
+            <ul id="monday" style="display: none;">
+                <li>Push-Ups: 3 sets of 15 reps</li>
+                <li>Squats: 3 sets of 20 reps</li>
+                <li>Plank: Hold for 60 seconds</li>
+            </ul>
+        </div>
+
+        <div class="day" onclick="window.location.href='tue.html'">  <!--onclick function-->
+            <h3>Tuesday - Cardio & Core</h3>
+            <img src="tuesday.jpg" alt="Cardio & Core Workout">
+            <ul id="tuesday" style="display: none;">
+                <li>Jump Rope: 3 sets of 2 minutes</li>
+                <li>Bicycle Crunches: 3 sets of 20 reps</li>
+                <li>Mountain Climbers: 3 sets of 30 seconds</li>
+            </ul>
+        </div>
+
+        <div class="day" onclick="window.location.href='wed.html'">  <!--onclick function-->
+            <h3>Wednesday - Upper Body Strength</h3>
+            <img src="webnesday.jpg" alt="Upper Body Strength Workout">
+            <ul id="wednesday" style="display: none;">
+                <li>Pull-Ups: 3 sets of 10 reps</li>
+                <li>Shoulder Press: 3 sets of 12 reps</li>
+                <li>Tricep Dips: 3 sets of 15 reps</li>
+            </ul>
+        </div>
+
+        <div class="day" onclick="window.location.href='thu.html'">  <!--onclick function-->
+            <h3>Thursday - Active Recovery (Yoga & Stretching)</h3>
+            <img src="thursday.jpg" alt="Yoga & Stretching">
+            <ul id="thursday" style="display: none;">
+                <li>Sun Salutations: 5 rounds</li>
+                <li>Seated Forward Bend: Hold for 30 seconds</li>
+                <li>Child’s Pose: Hold for 60 seconds</li>
+            </ul>
+        </div>
+
+        <div class="day" onclick="window.location.href='fri.html'">  <!--onclick function-->
+            <h3>Friday - Lower Body Strength</h3>
+            <img src="saturaday.jpg" alt="Lower Body Strength Workout">
+            <ul id="friday" style="display: none;">
+                <li>Lunges: 3 sets of 15 reps per leg</li>
+                <li>Deadlifts: 3 sets of 10 reps</li>
+                <li>Calf Raises: 3 sets of 20 reps</li>
+            </ul>
+        </div>
+
+        <div class="day" onclick="window.location.href='sat.html'">  <!--onclick function-->
+            <h3>Saturday - Cardio Endurance</h3>
+            <img src="saturday.jpg" alt="Cardio Endurance Workout">
+            <ul id="saturday" style="display: none;">
+                <li>Running: 20 minutes</li>
+                <li>Jump Squats: 3 sets of 15 reps</li>
+                <li>Burpees: 3 sets of 10 reps</li>
+            </ul>
+        </div>
+
+        <div class="day" onclick="window.location.href='sun.html'">  <!--onclick function-->
+            <h3>Sunday - Rest & Recovery</h3>
+            <img src="sunday.jpg" alt="Rest & Recovery">
+            <p id="sunday" style="display: none;">Light stretching and relaxation</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        FitnessSpare: Your Ultimate Guide to Health & Wellness.
+    </footer>
+</body>
+</html>
+
+

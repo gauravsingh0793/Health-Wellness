@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregnancy Health & Wellness</title>
+    <link rel="stylesheet" href="prengency.css">
+</head>
+<body>
+
+    <header>
+        <h1>Pregnancy Health & Wellness</h1>
+        <!-- Pregnancy Image Section -->
+     <div class="pregnancy-image">
+        <img src="https://bebe.abril.com.br/wp-content/uploads/2016/10/transformacoes-corpo-gravida.jpg" alt="Pregnant Woman">
+     </div>
+
+        <nav>
+            <ul>
+                <li><a href="#diet">Diet Recommendation</a></li>
+                <li><a href="#motivation">Motivation Program</a></li>
+                <li><a href="#weight">Weight Assessment</a></li>
+                <li><a href="#nutrition">Nutrition Strategies</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Diet Recommendation -->
+        <section id="diet" class="content-section">
+            <h2>Diet Recommendation</h2>
+            <p>Maintain a healthy pregnancy with proper nutrition.</p>
+            <button onclick="toggleSection('diet-content')">Read More</button>
+            <div id="diet-content" class="hidden">
+                <ul>
+                    <li>✅ Eat folate-rich foods (leafy greens, oranges).</li>
+                    <li>✅ Increase protein intake (eggs, fish, lean meat).</li>
+                    <li>✅ Stay hydrated (8+ glasses of water daily).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Motivation Program -->
+        <section id="motivation" class="content-section">
+            <h2>Motivation Program</h2>
+            <p>Stay positive and motivated throughout pregnancy.</p>
+            <button onclick="toggleSection('motivation-content')">Read More</button>
+            <div id="motivation-content" class="hidden">
+                <ul>
+                    <li>✨ Practice mindfulness and meditation.</li>
+                    <li>✨ Keep a pregnancy journal.</li>
+                    <li>✨ Join prenatal support groups.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Weight Assessment -->
+        <section id="weight" class="content-section">
+            <h2>Weight Assessment</h2>
+            <p>Calculate your recommended pregnancy weight range.</p>
+            <div class="bmi-calculator">
+                <label for="weightInput">Pre-Pregnancy Weight (kg):</label>
+                <input type="number" id="weightInput">
+                <label for="heightInput">Height (cm):</label>
+                <input type="number" id="heightInput">
+                <button onclick="calculateBMI()">Check Weight Range</button>
+                <p id="bmiResult"></p>
+            </div>
+        </section>
+
+        <!-- Nutrition Strategies -->
+        <section id="nutrition" class="content-section">
+            <h2>Nutrition Strategies</h2>
+            <p>Optimize your pregnancy nutrition for a healthy baby.</p>
+            <button onclick="toggleSection('nutrition-content')">Read More</button>
+            <div id="nutrition-content" class="hidden">
+                <ul>
+                    <li>🥦 Eat iron-rich foods (spinach, beans, red meat).</li>
+                    <li>🥑 Include healthy fats (avocado, nuts, olive oil).</li>
+                    <li>🍼 Take prenatal vitamins as prescribed.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="prengency.js"></script>
+</body>
+</html>

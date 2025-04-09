@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition - Healthify</title>
+    <link rel="stylesheet" href="nutriation.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Eat Smart, Live Strong</h1>
+            <p>Discover personalized nutrition plans for a healthier lifestyle.</p>
+            <a href="#" class="btn">Get Your Diet Plan</a>
+        </div>
+    </section>
+
+    <!-- Nutrition Info Section -->
+    <section class="nutrition-info">
+        <h2>Why Nutrition Matters?</h2>
+        <p>Proper nutrition is essential for maintaining a healthy body and mind. It helps in boosting immunity, improving energy levels, and preventing diseases.</p>
+    </section>
+
+    <!-- Nutrition Cards -->
+    <section class="nutrition-section">
+        <h2 class="section-title">Our Nutrition Plans</h2>
+        <div class="cards">
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="https://source.unsplash.com/300x200/?healthy-food,vegetables" alt="Healthy Food">
+                <div class="card-content">
+                    <h3>Weight Loss Diet</h3>
+                    <p>Achieve your fitness goals with a balanced diet plan.</p>
+                    <a href="#" class="btn">View Plan</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="https://source.unsplash.com/300x200/?smoothie,detox" alt="Detox">
+                <div class="card-content">
+                    <h3>Detox & Cleansing</h3>
+                    <p>Cleanse your body with natural and effective diet programs.</p>
+                    <a href="#" class="btn">View Plan</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="https://source.unsplash.com/300x200/?protein,healthy" alt="Protein Diet">
+                <div class="card-content">
+                    <h3>High-Protein Diet</h3>
+                    <p>Boost muscle growth with protein-rich meal plans.</p>
+                    <a href="#" class="btn">View Plan</a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <img src="https://source.unsplash.com/300x200/?vegan,plant-based" alt="Vegan Diet">
+                <div class="card-content">
+                    <h3>Vegan & Plant-Based</h3>
+                    <p>Get all nutrients from a fully plant-based diet.</p>
+                    <a href="#" class="btn">View Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Healthify | Your Guide to Healthy Living</p>
+    </footer>
+
+    <script>
+        // Load Navbar
+        fetch("../service/navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    </script>
+
+</body>
+</html>
