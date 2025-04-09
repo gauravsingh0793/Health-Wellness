@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<!-- Redirect if not logged in -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyDX-zmj-1PCTG7c48BVDsilfvY-v0eqcbo",
+    authDomain: "health-421da.firebaseapp.com",
+    projectId: "health-421da",
+    storageBucket: "health-421da.appspot.com",
+    messagingSenderId: "18949078192",
+    appId: "1:18949078192:web:73c4152a54018279f5cf75",
+    measurementId: "G-FQDM26Z26V"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+  firebase.auth().onAuthStateChanged(user => {
+    if (!user) {
+      alert("🔐 Please login to access this page.");
+      window.location.href = "sign.html";
+    }
+  });
+</script>
+
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
