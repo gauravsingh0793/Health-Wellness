@@ -1,47 +1,71 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Sign-Up Form Submission
+// Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyDX-zmj-1PCTG7c48BVDsilfvY-v0eqcbo",
+    authDomain: "health-421da.firebaseapp.com",
+    projectId: "health-421da",
+    storageBucket: "health-421da.appspot.com",
+    messagingSenderId: "18949078192",
+    appId: "1:18949078192:web:73c4152a54018279f5cf75",
+    measurementId: "G-FQDM26Z26V"
+  };
+  
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    // Sign-Up Form
     document.querySelector(".sign-up form").addEventListener("submit", (event) => {
-        event.preventDefault(); // Prevent default form submission
-
-        const name = document.querySelector(".sign-up input[placeholder='Name']").value.trim();
-        const email = document.querySelector(".sign-up input[placeholder='Email']").value.trim().toLowerCase();
-        const password = document.querySelector(".sign-up input[placeholder='Password']").value;
-
-        if (!name || !email || !password) {
-            alert("⚠️ Please fill in all fields!");
-            return;
-        }
-
-        // Store user credentials in LocalStorage
-        localStorage.setItem("userName", name);
-        localStorage.setItem("userEmail", email);
-        localStorage.setItem("userPassword", password);
-
-        alert("✅ Account created successfully! You can now log in.");
-
-        // Clear input fields after successful registration
-        document.querySelector(".sign-up input[placeholder='Name']").value = "";
-        document.querySelector(".sign-up input[placeholder='Email']").value = "";
-        document.querySelector(".sign-up input[placeholder='Password']").value = "";
+      event.preventDefault();
+      const name = document.querySelector(".sign-up input[placeholder='Name']").value.trim();
+      const email = document.querySelector(".sign-up input[placeholder='Email']").value.trim();
+      const password = document.querySelector(".sign-up input[placeholder='Password']").value;
+  
+      if (!name || !email || !password) {
+        alert("⚠️ Please fill in all fields!");
+        return;
+      }
+  
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          alert("✅ Account created successfully!");
+          document.querySelector(".sign-up form").reset();
+          window.location.href = window.location.origin + "/project2/index.html";
+        })
+        .catch((error) => {
+          alert("❌ " + error.message);
+        });
     });
-
-    // Login Form Submission
+  
+    // Sign-In Form
     document.querySelector(".sign-in form").addEventListener("submit", (event) => {
-        event.preventDefault(); // Prevent default form submission
-
-        const email = document.querySelector(".sign-in input[placeholder='Email']").value.trim().toLowerCase();
-        const password = document.querySelector(".sign-in input[placeholder='Password']").value;
-
-        const storedEmail = localStorage.getItem("userEmail");
-        const storedPassword = localStorage.getItem("userPassword");
-
-        if (email === storedEmail && password === storedPassword) {
-            alert("🎉 Login successful! Redirecting...");
-
-            // Redirect to another page after login (change this to your actual page)
-            window.location.href = "dashboard.html"; // Example
-        } else {
-            alert("❌ Invalid email or password. Please try again!");
-        }
+      event.preventDefault();
+      const email = document.querySelector(".sign-in input[placeholder='Email']").value.trim();
+      const password = document.querySelector(".sign-in input[placeholder='Password']").value;
+  
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          alert("🎉 Login successful!");
+          window.location.href = window.location.origin + "/project2/index.html";
+        })
+        .catch((error) => {
+          alert("❌ " + error.message);
+        });
     });
-});
+  
+    // Google Sign-In (for both buttons)
+    function googleLogin() {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithPopup(provider)
+        .then((result) => {
+          alert("✅ Google sign-in successful!");
+          window.location.href = window.location.origin + "/project2/index.html";
+        })
+        .catch((error) => {
+          alert("❌ " + error.message);
+        });
+    }
+  
+    document.getElementById("googleSignIn").addEventListener("click", googleLogin);
+    document.getElementById("googleSignIn2").addEventListener("click", googleLogin);
+  });
+  
