@@ -1,4 +1,4 @@
-// Firebase configuration
+// Firebase config
 const firebaseConfig = {
     apiKey: "AIzaSyDX-zmj-1PCTG7c48BVDsilfvY-v0eqcbo",
     authDomain: "health-421da.firebaseapp.com",
@@ -12,53 +12,72 @@ const firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   
-  document.addEventListener("DOMContentLoaded", function () {
-    // Sign-Up Form
-    document.querySelector(".sign-up form").addEventListener("submit", (event) => {
-      event.preventDefault();
-      const name = document.querySelector(".sign-up input[placeholder='Name']").value.trim();
-      const email = document.querySelector(".sign-up input[placeholder='Email']").value.trim();
-      const password = document.querySelector(".sign-up input[placeholder='Password']").value;
+  document.addEventListener("DOMContentLoaded", () => {
+    const signUpForm = document.getElementById("signup-form");
+    const signInForm = document.getElementById("signin-form");
+    const container = document.getElementById("container");
+    const loginBtn = document.getElementById("login");
+    const registerBtn = document.getElementById("register");
   
-      if (!name || !email || !password) {
-        alert("⚠️ Please fill in all fields!");
-        return;
-      }
+    // Toggle between Sign In / Sign Up
+    registerBtn.addEventListener("click", () => {
+      container.classList.add("active");
+    });
+  
+    loginBtn.addEventListener("click", () => {
+      container.classList.remove("active");
+    });
+  
+    // ✅ Sign-Up
+    signUpForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+  
+      const name = document.getElementById("signup-name").value.trim();
+      const email = document.getElementById("signup-email").value.trim();
+      const password = document.getElementById("signup-password").value;
   
       firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
-          alert("✅ Account created successfully!");
-          document.querySelector(".sign-up form").reset();
-          window.location.href = window.location.origin + "/project2/index.html";
+          return userCredential.user.updateProfile({
+            displayName: name
+          });
+        })
+        .then(() => {
+          alert("✅ Sign up successful!");
+          signUpForm.reset();
+          window.location.href = "/project2/index.html";
         })
         .catch((error) => {
           alert("❌ " + error.message);
         });
     });
   
-    // Sign-In Form
-    document.querySelector(".sign-in form").addEventListener("submit", (event) => {
-      event.preventDefault();
-      const email = document.querySelector(".sign-in input[placeholder='Email']").value.trim();
-      const password = document.querySelector(".sign-in input[placeholder='Password']").value;
+    // ✅ Sign-In
+    signInForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+  
+      const email = document.getElementById("signin-email").value.trim();
+      const password = document.getElementById("signin-password").value;
   
       firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-          alert("🎉 Login successful!");
-          window.location.href = window.location.origin + "/project2/index.html";
+        .then(() => {
+          alert("✅ Sign in successful!");
+          window.location.href = "/project2/index.html";
         })
         .catch((error) => {
           alert("❌ " + error.message);
         });
     });
   
-    // Google Sign-In (for both buttons)
-    function googleLogin() {
+    // ✅ Google Sign-In (for both buttons)
+    function googleLogin(e) {
+      e.preventDefault();
       const provider = new firebase.auth.GoogleAuthProvider();
+  
       firebase.auth().signInWithPopup(provider)
-        .then((result) => {
-          alert("✅ Google sign-in successful!");
-          window.location.href = window.location.origin + "/project2/index.html";
+        .then(() => {
+          alert("✅ Google login successful!");
+          window.location.href = "/project2/index.html";
         })
         .catch((error) => {
           alert("❌ " + error.message);
